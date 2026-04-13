@@ -10,7 +10,7 @@ import shutil
 app = Flask(__name__)
 socketio = SocketIO(app, cors_allowed_origins="*")
 
-BASE_DIR = "downloads"
+BASE_DIR = os.environ.get("RENDER_DISK_PATH", "downloads")
 os.makedirs(BASE_DIR, exist_ok=True)
 
 
